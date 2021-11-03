@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
     public float gravity = -10f;
-    public float jumpHeight = 2f;
+    public float jumpHeight = 5f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
 #endif
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        Debug.Log(isGrounded);
 
         if (isGrounded && velocity.y < 0)
         {
